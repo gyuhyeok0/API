@@ -16,6 +16,7 @@ public class Application01 {
         StringBuilder sb = new StringBuilder("java");
 
         System.out.println(sb);
+        System.out.println(sb);
 
         System.out.println("sb 의 hashoCode : " + sb.hashCode());
 

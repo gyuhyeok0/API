@@ -51,14 +51,27 @@ public class Book {
         this.price = price;
     }
 
+//    @Override
+//    public String toString() {
+//        return "Book{" +
+//                "number=" + number +
+//                ", title='" + title + '\'' +
+//                ", author='" + author + '\'' +
+//                ", price=" + price +
+//                '}';
+//    }
+
     @Override
-    public String toString() {
-        return "Book{" +
-                "number=" + number +
-                ", title='" + title + '\'' +
-                ", author='" + author + '\'' +
-                ", price=" + price +
-                '}';
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return number == book.number && price == book.price && Objects.equals(title, book.title) && Objects.equals(author, book.author);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(number, title, author, price);
     }
 
 //    @Override
